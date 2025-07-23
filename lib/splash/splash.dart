@@ -1,6 +1,7 @@
 import 'dart:async';
+import 'dart:developer';
 
-import 'package:delmo_app/login/login.dart';
+import 'package:delmo_app/registration/registration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -27,7 +28,7 @@ class _SplashViewState extends State<SplashView> {
        Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(
-            builder: (context) =>  LoginView(),
+            builder: (context) =>  RegistrationView(),
             //builder: (context) => isLoggedIn ? MenuView() : LoginView(),
           ),
           (Route<dynamic> route) => false,
