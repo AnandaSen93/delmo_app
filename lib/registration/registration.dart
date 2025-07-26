@@ -43,596 +43,604 @@ class _RegistrationViewState extends State<RegistrationView> {
                       icon: Icon(Icons.arrow_back, color: theam_sky_blue_color),
                     ),
                   ),
+                  SizedBox(width: 80,),
+                  Text("Registration",
+                       style: textStyleForHeading.copyWith(color: white_color),
+                  ),
+                  Spacer(),
                 ],
               ),
             ),
 
             // Header
             Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    // Profile image
-                    Container(
-                      width: double.infinity,
-                      height: 250,
-                      color: background_color,
-                      padding: EdgeInsets.all(25),
-                      child: Center(
-                        child: Container(
-                          decoration: BoxDecoration(shape: BoxShape.circle),
-                          clipBehavior: Clip.hardEdge,
-                          child: AspectRatio(
-                            aspectRatio: 1,
-                            child: Image.asset(
-                              "assets/images/default_image.png",
-                              fit: BoxFit.fitHeight,
+              child: GestureDetector(
+                onTap: (){
+                  _toggleKeyboard();
+                },
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      // Profile image
+                      Stack(
+                        children: [ Container(
+                          width: double.infinity,
+                          height: 250,
+                          color: background_color,
+                          padding: EdgeInsets.all(25),
+                          child: Center(
+                            child: Container(
+                              decoration: BoxDecoration(shape: BoxShape.circle),
+                              clipBehavior: Clip.hardEdge,
+                              child: AspectRatio(
+                                aspectRatio: 1,
+                                child: Image.asset(
+                                  "assets/images/default_image.png",
+                                  fit: BoxFit.fitHeight,
+                                ),
+                              ),
                             ),
                           ),
                         ),
+                        Positioned(
+                          top: 50,
+                          right: 90,
+                          child: IconButton(onPressed: (){
+                
+                          }, icon: Image.asset(
+                            "assets/images/camera.png",
+                            height: 35,
+                            width: 35,
+                            )),
+                        )
+                        ]
                       ),
-                    ),
-
-                    // Profile image
-
-                    // Form
-                    Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.only(left: 15, right: 15, top: 15),
-                      child: Column(
-                        children: [
-                          SizedBox(height: 15),
-                          // Name
-                          Container(
-                            height: 45,
-                            padding: EdgeInsets.only(left: 10, right: 10),
-                            decoration: BoxDecoration(
-                              border: BoxBorder.all(
-                                color: theam_dark_blue_color,
-                                width: 1,
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: PlatformTextField(
-                              //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
-                              // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
-                              inputFormatters: [
-                                FilteringTextInputFormatter.deny(
-                                  RegExp(r'[0-9]'),
+                
+                      // Profile image
+                
+                      // Form
+                      Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.only(left: 15, right: 15, top: 15),
+                        child: Column(
+                          children: [
+                            SizedBox(height: 15),
+                            // Name
+                            Container(
+                              height: 45,
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              decoration: BoxDecoration(
+                                border: BoxBorder.all(
+                                  color: theam_dark_blue_color,
+                                  width: 1,
                                 ),
-                              ],
-                              keyboardType: TextInputType.name,
-                              // minLines: 4,         // Minimum height (optional)
-                              // maxLines: null, // Keyboard optimized for name input
-                              onSubmitted: (_) => _toggleKeyboard(),
-                              hintText:
-                                  'First Name', // Common hint text (can override per platform)
-                              // iOS Specific Customization
-                              cupertino: (context, platform) => CupertinoTextFieldData(
-                                decoration: BoxDecoration(
-                                  color: Colors
-                                      .transparent, // No background color for iOS field
-                                ),
-                                style:
-                                    textStyleForTextField, // Text color on iOS
+                                borderRadius: BorderRadius.circular(8),
                               ),
-
-                              // Android Specific Customization
-                              material: (context, platform) =>
-                                  MaterialTextFieldData(
-                                    decoration: InputDecoration(
-                                      hintText: 'First Name',
-                                      border: InputBorder.none,
-                                      enabledBorder: InputBorder.none,
-                                      focusedBorder: InputBorder.none,
-                                      disabledBorder: InputBorder.none,
-                                      filled: false, // No background fill
-                                      contentPadding: EdgeInsets.all(10),
-                                      // Optional: reduce padding
-                                    ),
-                                    style: textStyleForTextField,
+                              child: PlatformTextField(
+                                //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
+                                // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
+                                inputFormatters: [
+                                  FilteringTextInputFormatter.deny(
+                                    RegExp(r'[0-9]'),
                                   ),
-                            ),
-                          ),
-
-                          SizedBox(height: 15),
-                          // Name
-
-                          // Name
-                          Container(
-                            height: 45,
-                            padding: EdgeInsets.only(left: 10, right: 10),
-                            decoration: BoxDecoration(
-                              border: BoxBorder.all(
-                                color: theam_dark_blue_color,
-                                width: 1,
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: PlatformTextField(
-                              //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
-                              // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
-                              inputFormatters: [
-                                FilteringTextInputFormatter.deny(
-                                  RegExp(r'[0-9]'),
-                                ),
-                              ],
-                              keyboardType: TextInputType.name,
-                              // minLines: 4,         // Minimum height (optional)
-                              // maxLines: null, // Keyboard optimized for name input
-                              onSubmitted: (_) => _toggleKeyboard(),
-                              hintText:
-                                  'First Name', // Common hint text (can override per platform)
-                              // iOS Specific Customization
-                              cupertino: (context, platform) => CupertinoTextFieldData(
-                                decoration: BoxDecoration(
-                                  color: Colors
-                                      .transparent, // No background color for iOS field
-                                ),
-                                style:
-                                    textStyleForTextField, // Text color on iOS
-                              ),
-
-                              // Android Specific Customization
-                              material: (context, platform) =>
-                                  MaterialTextFieldData(
-                                    decoration: InputDecoration(
-                                      hintText: 'First Name',
-                                      border: InputBorder.none,
-                                      enabledBorder: InputBorder.none,
-                                      focusedBorder: InputBorder.none,
-                                      disabledBorder: InputBorder.none,
-                                      filled: false, // No background fill
-                                      contentPadding: EdgeInsets.all(10),
-                                      // Optional: reduce padding
-                                    ),
-                                    style: textStyleForTextField,
+                                ],
+                                keyboardType: TextInputType.name,
+                                // minLines: 4,         // Minimum height (optional)
+                                // maxLines: null, // Keyboard optimized for name input
+                                onSubmitted: (_) => _toggleKeyboard(),
+                                hintText:
+                                    'First Name', // Common hint text (can override per platform)
+                                // iOS Specific Customization
+                                cupertino: (context, platform) => CupertinoTextFieldData(
+                                  decoration: BoxDecoration(
+                                    color: Colors
+                                        .transparent, // No background color for iOS field
                                   ),
-                            ),
-                          ),
-
-                          SizedBox(height: 15),
-                          // Name
-
-                          // Name
-                          Container(
-                            height: 45,
-                            padding: EdgeInsets.only(left: 10, right: 10),
-                            decoration: BoxDecoration(
-                              border: BoxBorder.all(
-                                color: theam_dark_blue_color,
-                                width: 1,
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: PlatformTextField(
-                              //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
-                              // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
-                              inputFormatters: [
-                                FilteringTextInputFormatter.deny(
-                                  RegExp(r'[0-9]'),
+                                  style:
+                                      textStyleForTextField, // Text color on iOS
                                 ),
-                              ],
-                              keyboardType: TextInputType.name,
-                              // minLines: 4,         // Minimum height (optional)
-                              // maxLines: null, // Keyboard optimized for name input
-                              onSubmitted: (_) => _toggleKeyboard(),
-                              hintText:
-                                  'First Name', // Common hint text (can override per platform)
-                              // iOS Specific Customization
-                              cupertino: (context, platform) => CupertinoTextFieldData(
-                                decoration: BoxDecoration(
-                                  color: Colors
-                                      .transparent, // No background color for iOS field
-                                ),
-                                style:
-                                    textStyleForTextField, // Text color on iOS
-                              ),
-
-                              // Android Specific Customization
-                              material: (context, platform) =>
-                                  MaterialTextFieldData(
-                                    decoration: InputDecoration(
-                                      hintText: 'First Name',
-                                      border: InputBorder.none,
-                                      enabledBorder: InputBorder.none,
-                                      focusedBorder: InputBorder.none,
-                                      disabledBorder: InputBorder.none,
-                                      filled: false, // No background fill
-                                      contentPadding: EdgeInsets.all(10),
-                                      // Optional: reduce padding
+                
+                                // Android Specific Customization
+                                material: (context, platform) =>
+                                    MaterialTextFieldData(
+                                      decoration: InputDecoration(
+                                        hintText: 'First Name',
+                                        border: InputBorder.none,
+                                        enabledBorder: InputBorder.none,
+                                        focusedBorder: InputBorder.none,
+                                        disabledBorder: InputBorder.none,
+                                        filled: false, // No background fill
+                                        contentPadding: EdgeInsets.all(10),
+                                        // Optional: reduce padding
+                                      ),
+                                      style: textStyleForTextField,
                                     ),
-                                    style: textStyleForTextField,
+                              ),
+                            ),
+                
+                            SizedBox(height: 15),
+                            // Name
+                
+                            // Name
+                            Container(
+                              height: 45,
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              decoration: BoxDecoration(
+                                border: BoxBorder.all(
+                                  color: theam_dark_blue_color,
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: PlatformTextField(
+                                //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
+                                // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
+                                inputFormatters: [
+                                  FilteringTextInputFormatter.deny(
+                                    RegExp(r'[0-9]'),
                                   ),
-                            ),
-                          ),
-
-                          SizedBox(height: 15),
-                          // Name
-
-                          // Name
-                          Container(
-                            height: 45,
-                            padding: EdgeInsets.only(left: 10, right: 10),
-                            decoration: BoxDecoration(
-                              border: BoxBorder.all(
-                                color: theam_dark_blue_color,
-                                width: 1,
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: PlatformTextField(
-                              //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
-                              // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
-                              inputFormatters: [
-                                FilteringTextInputFormatter.deny(
-                                  RegExp(r'[0-9]'),
+                                ],
+                                keyboardType: TextInputType.name,
+                                // minLines: 4,         // Minimum height (optional)
+                                // maxLines: null, // Keyboard optimized for name input
+                                onSubmitted: (_) => _toggleKeyboard(),
+                                hintText:
+                                    'Last Name', // Common hint text (can override per platform)
+                                // iOS Specific Customization
+                                cupertino: (context, platform) => CupertinoTextFieldData(
+                                  decoration: BoxDecoration(
+                                    color: Colors
+                                        .transparent, // No background color for iOS field
+                                  ),
+                                  style:
+                                      textStyleForTextField, // Text color on iOS
                                 ),
-                              ],
-                              keyboardType: TextInputType.name,
-                              // minLines: 4,         // Minimum height (optional)
-                              // maxLines: null, // Keyboard optimized for name input
-                              onSubmitted: (_) => _toggleKeyboard(),
-                              hintText:
-                                  'First Name', // Common hint text (can override per platform)
-                              // iOS Specific Customization
-                              cupertino: (context, platform) => CupertinoTextFieldData(
-                                decoration: BoxDecoration(
-                                  color: Colors
-                                      .transparent, // No background color for iOS field
-                                ),
-                                style:
-                                    textStyleForTextField, // Text color on iOS
-                              ),
-
-                              // Android Specific Customization
-                              material: (context, platform) =>
-                                  MaterialTextFieldData(
-                                    decoration: InputDecoration(
-                                      hintText: 'First Name',
-                                      border: InputBorder.none,
-                                      enabledBorder: InputBorder.none,
-                                      focusedBorder: InputBorder.none,
-                                      disabledBorder: InputBorder.none,
-                                      filled: false, // No background fill
-                                      contentPadding: EdgeInsets.all(10),
-                                      // Optional: reduce padding
+                
+                                // Android Specific Customization
+                                material: (context, platform) =>
+                                    MaterialTextFieldData(
+                                      decoration: InputDecoration(
+                                        hintText: 'Last Name',
+                                        border: InputBorder.none,
+                                        enabledBorder: InputBorder.none,
+                                        focusedBorder: InputBorder.none,
+                                        disabledBorder: InputBorder.none,
+                                        filled: false, // No background fill
+                                        contentPadding: EdgeInsets.all(10),
+                                        // Optional: reduce padding
+                                      ),
+                                      style: textStyleForTextField,
                                     ),
-                                    style: textStyleForTextField,
+                              ),
+                            ),
+                
+                            SizedBox(height: 15),
+                            // Name
+                
+                            // Name
+                            Container(
+                              height: 45,
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              decoration: BoxDecoration(
+                                border: BoxBorder.all(
+                                  color: theam_dark_blue_color,
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: PlatformTextField(
+                                //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
+                                // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
+                                inputFormatters: [FilteringTextInputFormatter.digitsOnly],            
+                                keyboardType: TextInputType.phone,
+                                // minLines: 4,         // Minimum height (optional)
+                                // maxLines: null, // Keyboard optimized for name input
+                                onSubmitted: (_) => _toggleKeyboard(),
+                                hintText:
+                                    'Phone', // Common hint text (can override per platform)
+                                // iOS Specific Customization
+                                cupertino: (context, platform) => CupertinoTextFieldData(
+                                  decoration: BoxDecoration(
+                                    color: Colors
+                                        .transparent, // No background color for iOS field
                                   ),
-                            ),
-                          ),
-
-                          SizedBox(height: 15),
-                          // Name
-
-                          // Name
-                          Container(
-                            height: 45,
-                            padding: EdgeInsets.only(left: 10, right: 10),
-                            decoration: BoxDecoration(
-                              border: BoxBorder.all(
-                                color: theam_dark_blue_color,
-                                width: 1,
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: PlatformTextField(
-                              //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
-                              // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
-                              inputFormatters: [
-                                FilteringTextInputFormatter.deny(
-                                  RegExp(r'[0-9]'),
+                                  style:
+                                      textStyleForTextField, // Text color on iOS
                                 ),
-                              ],
-                              keyboardType: TextInputType.name,
-                              // minLines: 4,         // Minimum height (optional)
-                              // maxLines: null, // Keyboard optimized for name input
-                              onSubmitted: (_) => _toggleKeyboard(),
-                              hintText:
-                                  'First Name', // Common hint text (can override per platform)
-                              // iOS Specific Customization
-                              cupertino: (context, platform) => CupertinoTextFieldData(
-                                decoration: BoxDecoration(
-                                  color: Colors
-                                      .transparent, // No background color for iOS field
-                                ),
-                                style:
-                                    textStyleForTextField, // Text color on iOS
-                              ),
-
-                              // Android Specific Customization
-                              material: (context, platform) =>
-                                  MaterialTextFieldData(
-                                    decoration: InputDecoration(
-                                      hintText: 'First Name',
-                                      border: InputBorder.none,
-                                      enabledBorder: InputBorder.none,
-                                      focusedBorder: InputBorder.none,
-                                      disabledBorder: InputBorder.none,
-                                      filled: false, // No background fill
-                                      contentPadding: EdgeInsets.all(10),
-                                      // Optional: reduce padding
+                
+                                // Android Specific Customization
+                                material: (context, platform) =>
+                                    MaterialTextFieldData(
+                                      decoration: InputDecoration(
+                                        hintText: 'Phone',
+                                        border: InputBorder.none,
+                                        enabledBorder: InputBorder.none,
+                                        focusedBorder: InputBorder.none,
+                                        disabledBorder: InputBorder.none,
+                                        filled: false, // No background fill
+                                        contentPadding: EdgeInsets.all(10),
+                                        // Optional: reduce padding
+                                      ),
+                                      style: textStyleForTextField,
                                     ),
-                                    style: textStyleForTextField,
+                              ),
+                            ),
+                
+                            SizedBox(height: 15),
+                            // Name
+                
+                            // Name
+                            Container(
+                              height: 45,
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              decoration: BoxDecoration(
+                                border: BoxBorder.all(
+                                  color: theam_dark_blue_color,
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: PlatformTextField(
+                                //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
+                                // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
+                               
+                                keyboardType: TextInputType.emailAddress,
+                                // minLines: 4,         // Minimum height (optional)
+                                // maxLines: null, // Keyboard optimized for name input
+                                onSubmitted: (_) => _toggleKeyboard(),
+                                hintText:
+                                    'Email', // Common hint text (can override per platform)
+                                // iOS Specific Customization
+                                cupertino: (context, platform) => CupertinoTextFieldData(
+                                  decoration: BoxDecoration(
+                                    color: Colors
+                                        .transparent, // No background color for iOS field
                                   ),
-                            ),
-                          ),
-
-                          SizedBox(height: 15),
-                          // Name
-
-                          // Name
-                          Container(
-                            height: 45,
-                            padding: EdgeInsets.only(left: 10, right: 10),
-                            decoration: BoxDecoration(
-                              border: BoxBorder.all(
-                                color: theam_dark_blue_color,
-                                width: 1,
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: PlatformTextField(
-                              //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
-                              // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
-                              inputFormatters: [
-                                FilteringTextInputFormatter.deny(
-                                  RegExp(r'[0-9]'),
+                                  style:
+                                      textStyleForTextField, // Text color on iOS
                                 ),
-                              ],
-                              keyboardType: TextInputType.name,
-                              // minLines: 4,         // Minimum height (optional)
-                              // maxLines: null, // Keyboard optimized for name input
-                              onSubmitted: (_) => _toggleKeyboard(),
-                              hintText:
-                                  'First Name', // Common hint text (can override per platform)
-                              // iOS Specific Customization
-                              cupertino: (context, platform) => CupertinoTextFieldData(
-                                decoration: BoxDecoration(
-                                  color: Colors
-                                      .transparent, // No background color for iOS field
-                                ),
-                                style:
-                                    textStyleForTextField, // Text color on iOS
-                              ),
-
-                              // Android Specific Customization
-                              material: (context, platform) =>
-                                  MaterialTextFieldData(
-                                    decoration: InputDecoration(
-                                      hintText: 'First Name',
-                                      border: InputBorder.none,
-                                      enabledBorder: InputBorder.none,
-                                      focusedBorder: InputBorder.none,
-                                      disabledBorder: InputBorder.none,
-                                      filled: false, // No background fill
-                                      contentPadding: EdgeInsets.all(10),
-                                      // Optional: reduce padding
+                
+                                // Android Specific Customization
+                                material: (context, platform) =>
+                                    MaterialTextFieldData(
+                                      decoration: InputDecoration(
+                                        hintText: 'Email',
+                                        border: InputBorder.none,
+                                        enabledBorder: InputBorder.none,
+                                        focusedBorder: InputBorder.none,
+                                        disabledBorder: InputBorder.none,
+                                        filled: false, // No background fill
+                                        contentPadding: EdgeInsets.all(10),
+                                        // Optional: reduce padding
+                                      ),
+                                      style: textStyleForTextField,
                                     ),
-                                    style: textStyleForTextField,
+                              ),
+                            ),
+                
+                            SizedBox(height: 15),
+                            // Name
+                
+                            // Name
+                            Container(
+                              height: 45,
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              decoration: BoxDecoration(
+                                border: BoxBorder.all(
+                                  color: theam_dark_blue_color,
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: PlatformTextField(
+                                //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
+                                // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
+                               
+                                keyboardType: TextInputType.emailAddress,
+                                // minLines: 4,         // Minimum height (optional)
+                                // maxLines: null, // Keyboard optimized for name input
+                                onSubmitted: (_) => _toggleKeyboard(),
+                                hintText:
+                                    'Address', // Common hint text (can override per platform)
+                                // iOS Specific Customization
+                                cupertino: (context, platform) => CupertinoTextFieldData(
+                                  decoration: BoxDecoration(
+                                    color: Colors
+                                        .transparent, // No background color for iOS field
                                   ),
-                            ),
-                          ),
-
-                          SizedBox(height: 15),
-                          // Name
-
-                          // Name
-                          Container(
-                            height: 45,
-                            padding: EdgeInsets.only(left: 10, right: 10),
-                            decoration: BoxDecoration(
-                              border: BoxBorder.all(
-                                color: theam_dark_blue_color,
-                                width: 1,
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: PlatformTextField(
-                              //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
-                              // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
-                              inputFormatters: [
-                                FilteringTextInputFormatter.deny(
-                                  RegExp(r'[0-9]'),
+                                  style:
+                                      textStyleForTextField, // Text color on iOS
                                 ),
-                              ],
-                              keyboardType: TextInputType.name,
-                              // minLines: 4,         // Minimum height (optional)
-                              // maxLines: null, // Keyboard optimized for name input
-                              onSubmitted: (_) => _toggleKeyboard(),
-                              hintText:
-                                  'First Name', // Common hint text (can override per platform)
-                              // iOS Specific Customization
-                              cupertino: (context, platform) => CupertinoTextFieldData(
-                                decoration: BoxDecoration(
-                                  color: Colors
-                                      .transparent, // No background color for iOS field
-                                ),
-                                style:
-                                    textStyleForTextField, // Text color on iOS
-                              ),
-
-                              // Android Specific Customization
-                              material: (context, platform) =>
-                                  MaterialTextFieldData(
-                                    decoration: InputDecoration(
-                                      hintText: 'First Name',
-                                      border: InputBorder.none,
-                                      enabledBorder: InputBorder.none,
-                                      focusedBorder: InputBorder.none,
-                                      disabledBorder: InputBorder.none,
-                                      filled: false, // No background fill
-                                      contentPadding: EdgeInsets.all(10),
-                                      // Optional: reduce padding
+                
+                                // Android Specific Customization
+                                material: (context, platform) =>
+                                    MaterialTextFieldData(
+                                      decoration: InputDecoration(
+                                        hintText: 'Address',
+                                        border: InputBorder.none,
+                                        enabledBorder: InputBorder.none,
+                                        focusedBorder: InputBorder.none,
+                                        disabledBorder: InputBorder.none,
+                                        filled: false, // No background fill
+                                        contentPadding: EdgeInsets.all(10),
+                                        // Optional: reduce padding
+                                      ),
+                                      style: textStyleForTextField,
                                     ),
-                                    style: textStyleForTextField,
+                              ),
+                            ),
+                
+                            SizedBox(height: 15),
+                            // Name
+                
+                            // Name
+                            Container(
+                              height: 45,
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              decoration: BoxDecoration(
+                                border: BoxBorder.all(
+                                  color: theam_dark_blue_color,
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: PlatformTextField(
+                                //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
+                                // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
+                                 inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                                keyboardType: TextInputType.phone,
+                                // minLines: 4,         // Minimum height (optional)
+                                // maxLines: null, // Keyboard optimized for name input
+                                onSubmitted: (_) => _toggleKeyboard(),
+                                hintText:
+                                    'Zip Code', // Common hint text (can override per platform)
+                                // iOS Specific Customization
+                                cupertino: (context, platform) => CupertinoTextFieldData(
+                                  decoration: BoxDecoration(
+                                    color: Colors
+                                        .transparent, // No background color for iOS field
                                   ),
-                            ),
-                          ),
-
-                          SizedBox(height: 15),
-                          // Name
-
-                          // Name
-                          Container(
-                            height: 45,
-                            padding: EdgeInsets.only(left: 10, right: 10),
-                            decoration: BoxDecoration(
-                              border: BoxBorder.all(
-                                color: theam_dark_blue_color,
-                                width: 1,
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: PlatformTextField(
-                              //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
-                              // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
-                              inputFormatters: [
-                                FilteringTextInputFormatter.deny(
-                                  RegExp(r'[0-9]'),
+                                  style:
+                                      textStyleForTextField, // Text color on iOS
                                 ),
-                              ],
-                              keyboardType: TextInputType.name,
-                              // minLines: 4,         // Minimum height (optional)
-                              // maxLines: null, // Keyboard optimized for name input
-                              onSubmitted: (_) => _toggleKeyboard(),
-                              hintText:
-                                  'First Name', // Common hint text (can override per platform)
-                              // iOS Specific Customization
-                              cupertino: (context, platform) => CupertinoTextFieldData(
-                                decoration: BoxDecoration(
-                                  color: Colors
-                                      .transparent, // No background color for iOS field
-                                ),
-                                style:
-                                    textStyleForTextField, // Text color on iOS
-                              ),
-
-                              // Android Specific Customization
-                              material: (context, platform) =>
-                                  MaterialTextFieldData(
-                                    decoration: InputDecoration(
-                                      hintText: 'First Name',
-                                      border: InputBorder.none,
-                                      enabledBorder: InputBorder.none,
-                                      focusedBorder: InputBorder.none,
-                                      disabledBorder: InputBorder.none,
-                                      filled: false, // No background fill
-                                      contentPadding: EdgeInsets.all(10),
-                                      // Optional: reduce padding
+                
+                                // Android Specific Customization
+                                material: (context, platform) =>
+                                    MaterialTextFieldData(
+                                      decoration: InputDecoration(
+                                        hintText: 'Zip Code',
+                                        border: InputBorder.none,
+                                        enabledBorder: InputBorder.none,
+                                        focusedBorder: InputBorder.none,
+                                        disabledBorder: InputBorder.none,
+                                        filled: false, // No background fill
+                                        contentPadding: EdgeInsets.all(10),
+                                        // Optional: reduce padding
+                                      ),
+                                      style: textStyleForTextField,
                                     ),
-                                    style: textStyleForTextField,
+                              ),
+                            ),
+                
+                            SizedBox(height: 15),
+                            // Name
+                
+                            // Name
+                            Container(
+                              height: 45,
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              decoration: BoxDecoration(
+                                border: BoxBorder.all(
+                                  color: theam_dark_blue_color,
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: PlatformTextField(
+                                //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
+                                // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
+                                inputFormatters: [
+                                  FilteringTextInputFormatter.deny(
+                                    RegExp(r'[0-9]'),
                                   ),
-                            ),
-                          ),
-
-                          SizedBox(height: 15),
-                          // Name
-
-                          // Name
-                          Container(
-                            height: 45,
-                            padding: EdgeInsets.only(left: 10, right: 10),
-                            decoration: BoxDecoration(
-                              border: BoxBorder.all(
-                                color: theam_dark_blue_color,
-                                width: 1,
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: PlatformTextField(
-                              //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
-                              // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
-                              inputFormatters: [
-                                FilteringTextInputFormatter.deny(
-                                  RegExp(r'[0-9]'),
+                                ],
+                                keyboardType: TextInputType.emailAddress,
+                                // minLines: 4,         // Minimum height (optional)
+                                // maxLines: null, // Keyboard optimized for name input
+                                onSubmitted: (_) => _toggleKeyboard(),
+                                hintText:
+                                    'State', // Common hint text (can override per platform)
+                                // iOS Specific Customization
+                                cupertino: (context, platform) => CupertinoTextFieldData(
+                                  decoration: BoxDecoration(
+                                    color: Colors
+                                        .transparent, // No background color for iOS field
+                                  ),
+                                  style:
+                                      textStyleForTextField, // Text color on iOS
                                 ),
-                              ],
-                              keyboardType: TextInputType.name,
-                              // minLines: 4,         // Minimum height (optional)
-                              // maxLines: null, // Keyboard optimized for name input
-                              onSubmitted: (_) => _toggleKeyboard(),
-                              hintText:
-                                  'First Name', // Common hint text (can override per platform)
-                              // iOS Specific Customization
-                              cupertino: (context, platform) => CupertinoTextFieldData(
-                                decoration: BoxDecoration(
-                                  color: Colors
-                                      .transparent, // No background color for iOS field
-                                ),
-                                style:
-                                    textStyleForTextField, // Text color on iOS
-                              ),
-
-                              // Android Specific Customization
-                              material: (context, platform) =>
-                                  MaterialTextFieldData(
-                                    decoration: InputDecoration(
-                                      hintText: 'First Name',
-                                      border: InputBorder.none,
-                                      enabledBorder: InputBorder.none,
-                                      focusedBorder: InputBorder.none,
-                                      disabledBorder: InputBorder.none,
-                                      filled: false, // No background fill
-                                      contentPadding: EdgeInsets.all(10),
-                                      // Optional: reduce padding
+                
+                                // Android Specific Customization
+                                material: (context, platform) =>
+                                    MaterialTextFieldData(
+                                      decoration: InputDecoration(
+                                        hintText: 'State',
+                                        border: InputBorder.none,
+                                        enabledBorder: InputBorder.none,
+                                        focusedBorder: InputBorder.none,
+                                        disabledBorder: InputBorder.none,
+                                        filled: false, // No background fill
+                                        contentPadding: EdgeInsets.all(10),
+                                        // Optional: reduce padding
+                                      ),
+                                      style: textStyleForTextField,
                                     ),
-                                    style: textStyleForTextField,
-                                  ),
-                            ),
-                          ),
-
-                          SizedBox(height: 20),
-
-                          // Name
-                          Container(
-                            height: 10,
-                            clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(
-                              color: theam_dark_blue_color,
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(10),
-                                topRight: Radius.circular(10),
                               ),
                             ),
-                          ),                      
-                        ],
+                
+                            SizedBox(height: 15),
+                            // Name
+                
+                            // Name
+                            Container(
+                              height: 45,
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              decoration: BoxDecoration(
+                                border: BoxBorder.all(
+                                  color: theam_dark_blue_color,
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: PlatformTextField(
+                                //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
+                                // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
+                                inputFormatters: [
+                                  FilteringTextInputFormatter.deny(
+                                    RegExp(r'[0-9]'),
+                                  ),
+                                ],
+                                keyboardType: TextInputType.name,
+                                // minLines: 4,         // Minimum height (optional)
+                                // maxLines: null, // Keyboard optimized for name input
+                                onSubmitted: (_) => _toggleKeyboard(),
+                                hintText:
+                                    'City', // Common hint text (can override per platform)
+                                // iOS Specific Customization
+                                cupertino: (context, platform) => CupertinoTextFieldData(
+                                  decoration: BoxDecoration(
+                                    color: Colors
+                                        .transparent, // No background color for iOS field
+                                  ),
+                                  style:
+                                      textStyleForTextField, // Text color on iOS
+                                ),
+                
+                                // Android Specific Customization
+                                material: (context, platform) =>
+                                    MaterialTextFieldData(
+                                      decoration: InputDecoration(
+                                        hintText: 'City',
+                                        border: InputBorder.none,
+                                        enabledBorder: InputBorder.none,
+                                        focusedBorder: InputBorder.none,
+                                        disabledBorder: InputBorder.none,
+                                        filled: false, // No background fill
+                                        contentPadding: EdgeInsets.all(10),
+                                        // Optional: reduce padding
+                                      ),
+                                      style: textStyleForTextField,
+                                    ),
+                              ),
+                            ),
+                
+                            SizedBox(height: 15),
+                            // Name
+                
+                            // Name
+                            Container(
+                              height: 45,
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              decoration: BoxDecoration(
+                                border: BoxBorder.all(
+                                  color: theam_dark_blue_color,
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: PlatformTextField(
+                                //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
+                                // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
+                                inputFormatters: [
+                                  FilteringTextInputFormatter.deny(
+                                    RegExp(r'[0-9]'),
+                                  ),
+                                ],
+                                keyboardType: TextInputType.name,
+                                // minLines: 4,         // Minimum height (optional)
+                                // maxLines: null, // Keyboard optimized for name input
+                                onSubmitted: (_) => _toggleKeyboard(),
+                                hintText:
+                                    'Country', // Common hint text (can override per platform)
+                                // iOS Specific Customization
+                                cupertino: (context, platform) => CupertinoTextFieldData(
+                                  decoration: BoxDecoration(
+                                    color: Colors
+                                        .transparent, // No background color for iOS field
+                                  ),
+                                  style:
+                                      textStyleForTextField, // Text color on iOS
+                                ),
+                
+                                // Android Specific Customization
+                                material: (context, platform) =>
+                                    MaterialTextFieldData(
+                                      decoration: InputDecoration(
+                                        hintText: 'Country',
+                                        border: InputBorder.none,
+                                        enabledBorder: InputBorder.none,
+                                        focusedBorder: InputBorder.none,
+                                        disabledBorder: InputBorder.none,
+                                        filled: false, // No background fill
+                                        contentPadding: EdgeInsets.all(10),
+                                        // Optional: reduce padding
+                                      ),
+                                      style: textStyleForTextField,
+                                    ),
+                              ),
+                            ),
+                
+                            SizedBox(height: 20),
+                
+                            // Name
+                            Container(
+                              height: 10,
+                              clipBehavior: Clip.antiAlias,
+                              decoration: BoxDecoration(
+                                color: theam_dark_blue_color,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10),
+                                ),
+                              ),
+                            ),                      
+                          ],
+                        ),
                       ),
-                    ),
-
-                      // Submit
-                           Container(
-                            color:background_color,
-                            padding: EdgeInsets.only(left: 15,right: 15,top:25, bottom: 25),
-                             child: Container(
-                                width: double.infinity,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                    colors: [
-                                      theam_sky_blue_color, // Start color (blue)
-                                      theam_dark_blue_color, // End color (light blue)
-                                    ],
-                                    begin: Alignment.topLeft,
-                                    end: Alignment.bottomRight,
+                
+                        // Submit
+                             Container(
+                              color:background_color,
+                              padding: EdgeInsets.only(left: 15,right: 15,top:25, bottom: 25),
+                               child: Container(
+                                  width: double.infinity,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        theam_sky_blue_color, // Start color (blue)
+                                        theam_dark_blue_color, // End color (light blue)
+                                      ],
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
+                                    ),
+                                    borderRadius: BorderRadius.circular(
+                                      10,
+                                    ), // Optional: Rounded corners
                                   ),
-                                  borderRadius: BorderRadius.circular(
-                                    10,
-                                  ), // Optional: Rounded corners
-                                ),
-                                child: TextButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    "SUBMIT → ",
-                                    style: textStyleForButton,
+                                  child: TextButton(
+                                    onPressed: () {},
+                                    child: Text(
+                                      "SUBMIT → ",
+                                      style: textStyleForButton,
+                                    ),
                                   ),
                                 ),
-                              ),
-                           ),
-
-                          // Submit
-                  ],
+                             ),
+                
+                            // Submit
+                    ],
+                  ),
                 ),
               ),
             ),
