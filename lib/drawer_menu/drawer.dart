@@ -1,33 +1,120 @@
 import 'package:delmo_app/helper_and_api/colors.dart';
+import 'package:delmo_app/helper_and_api/textstyle.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class DrawerView extends StatelessWidget {
-  final VoidCallback onClose;
+  final VoidCallback onItemTap;
 
-  const DrawerView({Key? key, required this.onClose}) : super(key: key);
+  DrawerView({required this.onItemTap});
+
+  List<String>? menuList = [
+    'Home',
+    'My Account',
+    'My Orders',
+    'My Request',
+    'About Us',
+    'Contact Us',
+    'Privacy Policy',
+    'Terms & Conditions',
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width * 0.7,
-      color: Colors.blue.shade700,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          DrawerHeader(
-            child: Text("Hello, User", style: TextStyle(color: Colors.white, fontSize: 20)),
+    return PlatformScaffold(
+      body: SafeArea(
+        child: Container(
+          color: theam_dark_blue_color,
+          width: double.infinity,
+          height: double.infinity,
+          padding: EdgeInsets.all(10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 120,
+                width: 120,
+                decoration: circleWithBorder,
+              ),
+              SizedBox(height: 10),
+              Text(
+                "Thomas Doe",
+                style: textStyleForName.copyWith(color: white_color),
+              ),
+              Text(
+                "+911234567890",
+                style: textStyleForphone.copyWith(color: white_color),
+              ),
+              SizedBox(height: 10),
+              Container(height: 1, color: theam_sky_blue_color),
+              SizedBox(height: 10),
+
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                     ListView.separated(
+                        itemCount: menuList?.length ?? 0,
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(), // Disables scrolling
+                        scrollDirection: Axis.vertical,
+                        separatorBuilder: (context, index) {
+                          return SizedBox(height: 10);
+                        },
+                        itemBuilder: (context, index) {
+                          return Container(
+                            padding: EdgeInsets.all(10),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  size: 20,
+                                  Icons.home,
+                                  color: white_color
+                                  ),
+                                  SizedBox(width: 10,),
+                                Text(
+                                  menuList?[index] ?? "",
+                                  style: textStyleForName.copyWith(
+                                    color: white_color,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+
+                      SizedBox(height: 10),
+                       Container(height: 1, color: theam_sky_blue_color),
+                       SizedBox(height: 10),
+                      TextButton(
+                        onPressed: onItemTap,
+                        child: Row(
+                              children: [
+                                Icon(
+                                  size: 20,
+                                  Icons.logout,
+                                  color: theam_sky_blue_color
+                                  ),
+                                  SizedBox(width: 10,),
+                                Text(
+                                  'Logout',
+                                  style: textStyleForName.copyWith(
+                                    color: theam_sky_blue_color,
+                                  ),
+                                ),
+                              ],
+                            ),
+                      ),
+
+                      SizedBox(height: 50),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
-          ListTile(
-            leading: Icon(Icons.home, color: Colors.white),
-            title: Text("Home", style: TextStyle(color: Colors.white)),
-            onTap: onClose,
-          ),
-          ListTile(
-            leading: Icon(Icons.settings, color: Colors.white),
-            title: Text("Settings", style: TextStyle(color: Colors.white)),
-            onTap: onClose,
-          ),
-        ],
+        ),
       ),
     );
   }

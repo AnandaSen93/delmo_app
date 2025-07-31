@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:delmo_app/home/home.dart';
 import 'package:flutter/material.dart';

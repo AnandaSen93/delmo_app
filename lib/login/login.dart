@@ -78,15 +78,9 @@ class _LoginViewState extends State<LoginView> {
                   child: Container(
                     height: 50,
                     padding: EdgeInsets.only(left: 10, right: 10),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: theam_dark_blue_color, // Black border color
-                        width: 1.0, // Border width
-                      ),
-                      borderRadius: BorderRadius.circular(
-                        10,
-                      ), // Optional: Rounded corners
-                    ),
+                    decoration: box_border.copyWith(border: Border.all(
+                                color: theam_dark_blue_color
+                              )),
                     child: Row(
                       children: [
                         Image.asset("assets/images/mobile.png"),
@@ -142,10 +136,7 @@ class _LoginViewState extends State<LoginView> {
                             // iOS Specific Customization
                             cupertino: (context, platform) =>
                                 CupertinoTextFieldData(
-                                  decoration: BoxDecoration(
-                                    color: Colors
-                                        .transparent, // No background color for iOS field
-                                  ),
+                                  decoration: text_decoration_clear,
                                   style: textStyleForTextField,
                                   // Text color on iOS
                                 ),
@@ -177,19 +168,7 @@ class _LoginViewState extends State<LoginView> {
                   child: Container(
                     width: double.infinity,
                     height: 50,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          theam_sky_blue_color, // Start color (blue)
-                          theam_dark_blue_color, // End color (light blue)
-                        ],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      borderRadius: BorderRadius.circular(
-                        10,
-                      ), // Optional: Rounded corners
-                    ),
+                    decoration: gradient_button_decoration,
                     child: TextButton(
                       onPressed: () {},
                       child: Text("Send OTP → ", style: textStyleForButton),

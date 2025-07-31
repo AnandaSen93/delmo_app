@@ -106,14 +106,7 @@ class _OtpViewState extends State<OtpView> {
 
                             Container(
                               height: double.infinity,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                    'assets/images/otp_background.png',
-                                  ), // Your image path
-                                  fit: BoxFit.cover, // Cover entire container
-                                ),
-                              ),
+                              decoration: otp_decoration,
                               child: AspectRatio(
                                 aspectRatio: 1,
                                 child: PlatformTextField(
@@ -133,10 +126,7 @@ class _OtpViewState extends State<OtpView> {
                                   // iOS Specific Customization
                                   cupertino: (context, platform) =>
                                       CupertinoTextFieldData(
-                                        decoration: BoxDecoration(
-                                          color: Colors
-                                              .transparent, // No background color for iOS field
-                                        ),
+                                        decoration: text_decoration_clear,
                                         style: textStyleForTextField,
                                         textAlign: TextAlign.center,
                                         // Text color on iOS
@@ -165,14 +155,7 @@ class _OtpViewState extends State<OtpView> {
 
                             Container(
                               height: double.infinity,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                    'assets/images/otp_background.png',
-                                  ), // Your image path
-                                  fit: BoxFit.cover, // Cover entire container
-                                ),
-                              ),
+                              decoration: otp_decoration,
                               child: AspectRatio(
                                 aspectRatio: 1,
                                 child: PlatformTextField(
@@ -192,10 +175,7 @@ class _OtpViewState extends State<OtpView> {
                                   // iOS Specific Customization
                                   cupertino: (context, platform) =>
                                       CupertinoTextFieldData(
-                                        decoration: BoxDecoration(
-                                          color: Colors
-                                              .transparent, // No background color for iOS field
-                                        ),
+                                        decoration: text_decoration_clear,
                                         style: textStyleForTextField,
                                         textAlign: TextAlign.center,
                                         // Text color on iOS
@@ -224,14 +204,7 @@ class _OtpViewState extends State<OtpView> {
 
                             Container(
                               height: double.infinity,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                    'assets/images/otp_background.png',
-                                  ), // Your image path
-                                  fit: BoxFit.cover, // Cover entire container
-                                ),
-                              ),
+                              decoration: otp_decoration,
                               child: AspectRatio(
                                 aspectRatio: 1,
                                 child: PlatformTextField(
@@ -251,10 +224,7 @@ class _OtpViewState extends State<OtpView> {
                                   // iOS Specific Customization
                                   cupertino: (context, platform) =>
                                       CupertinoTextFieldData(
-                                        decoration: BoxDecoration(
-                                          color: Colors
-                                              .transparent, // No background color for iOS field
-                                        ),
+                                        decoration: text_decoration_clear,
                                         style: textStyleForTextField,
                                         textAlign: TextAlign.center,
                                         // Text color on iOS
@@ -283,14 +253,7 @@ class _OtpViewState extends State<OtpView> {
 
                             Container(
                               height: double.infinity,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                    'assets/images/otp_background.png',
-                                  ), // Your image path
-                                  fit: BoxFit.cover, // Cover entire container
-                                ),
-                              ),
+                              decoration: otp_decoration,
                               child: AspectRatio(
                                 aspectRatio: 1,
                                 child: PlatformTextField(
@@ -310,10 +273,7 @@ class _OtpViewState extends State<OtpView> {
                                   // iOS Specific Customization
                                   cupertino: (context, platform) =>
                                       CupertinoTextFieldData(
-                                        decoration: BoxDecoration(
-                                          color: Colors
-                                              .transparent, // No background color for iOS field
-                                        ),
+                                        decoration: text_decoration_clear,
                                         style: textStyleForTextField,
                                         textAlign: TextAlign.center,
                                         // Text color on iOS
@@ -342,14 +302,7 @@ class _OtpViewState extends State<OtpView> {
 
                             Container(
                               height: double.infinity,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                    'assets/images/otp_background.png',
-                                  ), // Your image path
-                                  fit: BoxFit.cover, // Cover entire container
-                                ),
-                              ),
+                              decoration: otp_decoration,
                               child: AspectRatio(
                                 aspectRatio: 1,
                                 child: PlatformTextField(
@@ -369,10 +322,7 @@ class _OtpViewState extends State<OtpView> {
                                   // iOS Specific Customization
                                   cupertino: (context, platform) =>
                                       CupertinoTextFieldData(
-                                        decoration: BoxDecoration(
-                                          color: Colors
-                                              .transparent, // No background color for iOS field
-                                        ),
+                                        decoration: text_decoration_clear,
                                         style: textStyleForTextField,
                                         textAlign: TextAlign.center,
                                         // Text color on iOS
@@ -401,14 +351,7 @@ class _OtpViewState extends State<OtpView> {
 
                             Container(
                               height: double.infinity,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                    'assets/images/otp_background.png',
-                                  ), // Your image path
-                                  fit: BoxFit.cover, // Cover entire container
-                                ),
-                              ),
+                              decoration: otp_decoration,
                               child: AspectRatio(
                                 aspectRatio: 1,
                                 child: PlatformTextField(
@@ -428,10 +371,7 @@ class _OtpViewState extends State<OtpView> {
                                   // iOS Specific Customization
                                   cupertino: (context, platform) =>
                                       CupertinoTextFieldData(
-                                        decoration: BoxDecoration(
-                                          color: Colors
-                                              .transparent, // No background color for iOS field
-                                        ),
+                                        decoration: text_decoration_clear,
                                         style: textStyleForTextField,
                                         textAlign: TextAlign.center,
                                         // Text color on iOS
@@ -484,19 +424,7 @@ class _OtpViewState extends State<OtpView> {
                       child: Container(
                         width: double.infinity,
                         height: 50,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              theam_sky_blue_color, // Start color (blue)
-                              theam_dark_blue_color, // End color (light blue)
-                            ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
-                          borderRadius: BorderRadius.circular(
-                            10,
-                          ), // Optional: Rounded corners
-                        ),
+                        decoration: gradient_button_decoration,
                         child: TextButton(
                           onPressed: () {},
                           child: Text(
@@ -520,45 +448,3 @@ class _OtpViewState extends State<OtpView> {
 }
 
 
-
-
-
-// child: PlatformTextField(
-//                               maxLength: 1,
-//                               textInputAction: TextInputAction.done,
-//                               inputFormatters: [
-//                                 FilteringTextInputFormatter.digitsOnly,
-//                               ],
-//                               //controller: addeditAddressViewModel .postCodeController, // (Optional: TextEditingController, currently commented)
-//                               // onChanged: addeditAddressViewModel.setPostCode, // Called on text change
-//                               keyboardType: TextInputType.phone,
-//                               // minLines: 4,         // Minimum height (optional)
-//                               // maxLines: null, // Keyboard optimized for name input
-//                               onSubmitted: (_) => _toggleKeyboard(),
-//                               hintText:
-//                                   '0', // Common hint text (can override per platform)
-//                               // iOS Specific Customization
-//                               cupertino: (context, platform) =>
-//                                   CupertinoTextFieldData(
-//                                     decoration: BoxDecoration(
-//                                       color: Colors
-//                                           .transparent, // No background color for iOS field
-//                                     ),
-//                                     style: textStyleForTextField,
-//                                     // Text color on iOS
-//                                   ),
-                          
-//                               // Android Specific Customization
-//                               material: (context, platform) => MaterialTextFieldData(
-//                                 style: textStyleForTextField,
-//                                 decoration: InputDecoration(
-//                                   filled: false, // No fill color
-//                                   border: InputBorder.none,
-//                                   contentPadding: EdgeInsets.all(
-//                                     10,
-//                                   ), // Shows border around text field
-//                                   hintText:
-//                                       '0', // Hint text (optional, also passed above)
-//                                 ),
-//                               ),
-//                             ),
