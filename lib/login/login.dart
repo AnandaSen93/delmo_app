@@ -1,10 +1,12 @@
 import 'package:delmo_app/helper_and_api/colors.dart';
 import 'package:delmo_app/helper_and_api/textstyle.dart';
+import 'package:delmo_app/login/login_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 import 'package:country_picker/country_picker.dart';
+import 'package:provider/provider.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -27,6 +29,8 @@ class _LoginViewState extends State<LoginView> {
 
   @override
   Widget build(BuildContext context) {
+
+    final loginViewmodel = Provider.of<LoginViewmodel>(context);
     return PlatformScaffold(
       body: SafeArea(
         child: GestureDetector(
@@ -170,7 +174,10 @@ class _LoginViewState extends State<LoginView> {
                     height: 50,
                     decoration: gradient_button_decoration,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        loginViewmodel.navigateToOTP(context);
+
+                      },
                       child: Text("Send OTP → ", style: textStyleForButton),
                     ),
                   ),

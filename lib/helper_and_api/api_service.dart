@@ -63,7 +63,7 @@ class ApiServices extends ChangeNotifier {
       final responseBody = await response.stream.bytesToString();
       print("Response: $responseBody");
       final jsonMap = jsonDecode(responseBody);
-      print("Response: $responseBody");
+      print("Response: $jsonMap");
       // Map JSON to the ApiResponse model
       return responseBody;
       // }

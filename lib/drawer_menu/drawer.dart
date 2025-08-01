@@ -1,7 +1,9 @@
+import 'package:delmo_app/drawer_menu/drawer_viewmodel.dart';
 import 'package:delmo_app/helper_and_api/colors.dart';
 import 'package:delmo_app/helper_and_api/textstyle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+import 'package:provider/provider.dart';
 
 class DrawerView extends StatelessWidget {
   final VoidCallback onItemTap;
@@ -21,6 +23,7 @@ class DrawerView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final drawerViewmodel = Provider.of<DrawerViewmodel>(context);
     return PlatformScaffold(
       body: SafeArea(
         child: Container(
@@ -31,11 +34,7 @@ class DrawerView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: 120,
-                width: 120,
-                decoration: circleWithBorder,
-              ),
+              Container(height: 120, width: 120, decoration: circleWithBorder),
               SizedBox(height: 10),
               Text(
                 "Thomas Doe",
@@ -53,10 +52,11 @@ class DrawerView extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                     ListView.separated(
+                      ListView.separated(
                         itemCount: menuList?.length ?? 0,
                         shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(), // Disables scrolling
+                        physics:
+                            NeverScrollableScrollPhysics(), // Disables scrolling
                         scrollDirection: Axis.vertical,
                         separatorBuilder: (context, index) {
                           return SizedBox(height: 10);
@@ -64,47 +64,91 @@ class DrawerView extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return Container(
                             padding: EdgeInsets.all(10),
-                            child: Row(
-                              children: [
-                                Icon(
-                                  size: 20,
-                                  Icons.home,
-                                  color: white_color
-                                  ),
-                                  SizedBox(width: 10,),
-                                Text(
-                                  menuList?[index] ?? "",
-                                  style: textStyleForName.copyWith(
+                            child: GestureDetector(
+                              onTap: () {
+                                onItemTap();
+
+                                switch (menuList?[index]) {
+                                  case 'Home':                                    
+                                    break;
+                                  case 'My Account':
+                                  drawerViewmodel.navigateToMyAccount(context);
+                                  case 'My Orders':
+                                     drawerViewmodel.navigateToMyOrders(context);
+                                  case 'My Request':
+                                     drawerViewmodel.navigateToMyRequest(context);
+                                  case 'About Us':
+                                     drawerViewmodel.navigateToAboutUs(context);
+                                  case 'Contact Us':
+                                     drawerViewmodel.navigateToContactUs(context);
+                                  case 'Privacy Policy':
+                                     drawerViewmodel.navigateToPrivacy(context);
+                                  case 'Terms & Conditions':
+                                     drawerViewmodel.navigateToTermsView(context);
+                                  default:
+                                    drawerViewmodel.navigateToHome(context);
+                                    break;
+                                }
+                              },
+                              child: Row(
+                                children: [
+                                  Image.asset(
+                                switch (menuList?[index]) {
+                                  'Home'=> "assets/images/menu/home.png",
+                                  'My Account'=> "assets/images/menu/account.png",
+                                  'My Orders'=>  "assets/images/menu/myorder.png",
+                                  'My Request'=> "assets/images/menu/request.png",
+                                  'About Us'=> "assets/images/menu/aboutus.png",
+                                  'Contact Us'=> "assets/images/menu/contact.png",
+                                  'Privacy Policy'=> "assets/images/menu/privacy.png",
+                                  'Terms & Conditions' => "assets/images/menu/terms.png",
+                                   null => "assets/images/menu/home.png",
+                                  String() => "assets/images/menu/home.png",
+                                },
+                                    
+                                    height: 20,
+                                    width: 20,
                                     color: white_color,
+
                                   ),
-                                ),
-                              ],
+                                  SizedBox(width: 10),
+                                  Text(
+                                    menuList?[index] ?? "",
+                                    style: textStyleForName.copyWith(
+                                      color: white_color,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           );
                         },
                       ),
 
                       SizedBox(height: 10),
-                       Container(height: 1, color: theam_sky_blue_color),
-                       SizedBox(height: 10),
+                      Container(height: 1, color: theam_sky_blue_color),
+                      SizedBox(height: 10),
                       TextButton(
-                        onPressed: onItemTap,
+                        onPressed: (){
+                          onItemTap();
+                          drawerViewmodel.navigateToLogin(context);
+                        },
                         child: Row(
-                              children: [
-                                Icon(
-                                  size: 20,
-                                  Icons.logout,
-                                  color: theam_sky_blue_color
-                                  ),
-                                  SizedBox(width: 10,),
-                                Text(
-                                  'Logout',
-                                  style: textStyleForName.copyWith(
-                                    color: theam_sky_blue_color,
-                                  ),
-                                ),
-                              ],
+                          children: [
+                            Icon(
+                              size: 20,
+                              Icons.logout,
+                              color: theam_sky_blue_color,
                             ),
+                            SizedBox(width: 10),
+                            Text(
+                              'Logout',
+                              style: textStyleForName.copyWith(
+                                color: theam_sky_blue_color,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
 
                       SizedBox(height: 50),
