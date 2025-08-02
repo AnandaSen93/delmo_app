@@ -92,9 +92,17 @@ final gradient_button_decoration = BoxDecoration(
 );
 
 final circleWithBorder = BoxDecoration(
-                  shape: BoxShape.circle, // background color
-                  border: Border.all(
-                    color: white_color, // border color
-                    width: 2.0, // border width
-                  ),
-                );
+  shape: BoxShape.circle, // background color
+  border: Border.all(
+    color: white_color, // border color
+    width: 2.0, // border width
+  ),
+);
+
+// shadow
+final shadowBottom = BoxShadow(
+  color: Color.fromRGBO(0, 0, 0, 0.1), // shadow color
+  spreadRadius: 2, // how much the shadow spreads
+  blurRadius: 5, // how soft the shadow is
+  offset: Offset(2, 3), // shadow position (x, y)
+);

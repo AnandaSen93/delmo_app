@@ -88,7 +88,34 @@ class _RequestsubmitViewState extends State<RequestsubmitView> {
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
-                                Container(width: 50, color: Colors.amber),
+                                Container(
+                                  width: 50, 
+                                  padding: EdgeInsets.all(10),
+                                  alignment: Alignment.topRight,
+                                  child: Column(
+                                    children: [
+                                      SizedBox(height: 20,),
+                                      Icon(
+                                        Icons.circle,
+                                        size: 15,
+                                        color: theam_dark_blue_color,
+                                        ),
+                                        Expanded(
+                                          child: Container(
+                                            width: 1,
+                                            color: Colors.black26,
+                                          ),
+                                        ),
+                                        Icon(
+                                        Icons.circle,
+                                        size: 15,
+                                        color: theam_sky_blue_color,
+                                        ),
+                                        SizedBox(height: 20,)
+
+                                    ],
+                                  ),
+                                  ),
                                 Expanded(
                                   child: Container(
                                     padding: EdgeInsets.all(10),
@@ -329,21 +356,87 @@ class _RequestsubmitViewState extends State<RequestsubmitView> {
                           width: double.infinity,
                           padding: EdgeInsets.all(10),
                           child: Column(
+                            
                             children: [
                               Text(
-                                "Payment Method",
+                                "Upload Images",
                                 style: textStyleForHeading.copyWith(
                                   color: theam_dark_blue_color,
                                 ),
                               ),
-                
+                              SizedBox(height: 10,),
                               Container(
-                                padding: EdgeInsets.all(10),
-                                height: 60,
-                                color: Colors.amber,
+                                  padding: EdgeInsets.only(left:20,right: 20,top: 10, bottom: 10),
+                                height: 80,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    AspectRatio(
+                                      aspectRatio: 1,
+                                      child:Container(
+                                        decoration: box_border.copyWith(
+                                          border: Border.all(
+                                            color: Colors.transparent
+                                          ),
+                                          color: white_color,
+                                          boxShadow: [shadowBottom],
+                                        ),                                        
+                                        child: Icon(Icons.add)),
+                                    ),
+                                    AspectRatio(
+                                      aspectRatio: 1,
+                                      child:Container(
+                                        decoration: box_border.copyWith(
+                                          border: Border.all(
+                                            color: Colors.transparent
+                                          ),
+                                          color: white_color,
+                                          boxShadow: [shadowBottom],
+                                        ),                                        
+                                        child: Icon(Icons.add)),
+                                    ),
+                                     AspectRatio(
+                                      aspectRatio: 1,
+                                      child:Container(
+                                        decoration: box_border.copyWith(
+                                          border: Border.all(
+                                            color: Colors.transparent
+                                          ),
+                                          color: white_color,
+                                          boxShadow: [shadowBottom],
+                                        ),                                        
+                                        child: Icon(Icons.add)),
+                                    ),
+                                     AspectRatio(
+                                      aspectRatio: 1,
+                                      child:Container(
+                                        decoration: box_border.copyWith(
+                                          border: Border.all(
+                                            color: Colors.transparent
+                                          ),
+                                          color: white_color,
+                                          boxShadow: [shadowBottom],
+                                        ),                                        
+                                        child: Icon(Icons.add)),
+                                    ),
+                                     AspectRatio(
+                                      aspectRatio: 1,
+                                      child:Container(
+                                        decoration: box_border.copyWith(
+                                          border: Border.all(
+                                            color: Colors.transparent
+                                          ),
+                                          color: white_color,
+                                          boxShadow: [shadowBottom],
+                                        ),                                        
+                                        child: Icon(Icons.add)),
+                                    ),
+
+                                  ],
+                                ),
                               ),
-                
                               // images
+                              SizedBox(height: 10,),
                               Text(
                                 "*Maximum 5 images",
                                 style: textStyleForphone.copyWith(
