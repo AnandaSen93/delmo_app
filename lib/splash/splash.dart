@@ -28,7 +28,7 @@ class _SplashViewState extends State<SplashView> {
        Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(
-            builder: (context) =>  RequestsubmitView(),
+            builder: (context) =>  HomeView(),
             //builder: (context) => isLoggedIn ? MenuView() : LoginView(),
           ),
           (Route<dynamic> route) => false,

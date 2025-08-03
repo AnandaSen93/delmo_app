@@ -330,7 +330,7 @@ class _RequestsubmitViewState extends State<RequestsubmitView> {
                                       fillColor: Colors
                                           .transparent, // Make background clear
                                       border:
-                                          OutlineInputBorder(), // Optional: for visible border
+                                          OutlineInputBorder(borderSide: BorderSide.none), // Optional: for visible border
                                     ),
                                   ),
                                   cupertino: (_, __) => CupertinoTextFieldData(
