@@ -70,7 +70,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                           padding: EdgeInsets.all(25),
                           child: Center(
                             child: Container(
-                              decoration: BoxDecoration(shape: BoxShape.circle),
+                              decoration: circleWithBorder,
                               clipBehavior: Clip.hardEdge,
                               child: AspectRatio(
                                 aspectRatio: 1,
@@ -109,13 +109,9 @@ class _RegistrationViewState extends State<RegistrationView> {
                             Container(
                               height: 45,
                               padding: EdgeInsets.only(left: 10, right: 10),
-                              decoration: BoxDecoration(
-                                border: BoxBorder.all(
-                                  color: theam_dark_blue_color,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
+                              decoration: box_border.copyWith(border: Border.all(
+                                color: theam_dark_blue_color
+                              )),
                               child: PlatformTextField(
                                 //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
                                 // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
@@ -132,10 +128,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                                     'First Name', // Common hint text (can override per platform)
                                 // iOS Specific Customization
                                 cupertino: (context, platform) => CupertinoTextFieldData(
-                                  decoration: BoxDecoration(
-                                    color: Colors
-                                        .transparent, // No background color for iOS field
-                                  ),
+                                  decoration: text_decoration_clear,
                                   style:
                                       textStyleForTextField, // Text color on iOS
                                 ),
@@ -165,13 +158,9 @@ class _RegistrationViewState extends State<RegistrationView> {
                             Container(
                               height: 45,
                               padding: EdgeInsets.only(left: 10, right: 10),
-                              decoration: BoxDecoration(
-                                border: BoxBorder.all(
-                                  color: theam_dark_blue_color,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
+                              decoration: box_border.copyWith(border: Border.all(
+                                color: theam_dark_blue_color
+                              )),
                               child: PlatformTextField(
                                 //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
                                 // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
@@ -188,10 +177,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                                     'Last Name', // Common hint text (can override per platform)
                                 // iOS Specific Customization
                                 cupertino: (context, platform) => CupertinoTextFieldData(
-                                  decoration: BoxDecoration(
-                                    color: Colors
-                                        .transparent, // No background color for iOS field
-                                  ),
+                                  decoration: text_decoration_clear,
                                   style:
                                       textStyleForTextField, // Text color on iOS
                                 ),
@@ -221,13 +207,9 @@ class _RegistrationViewState extends State<RegistrationView> {
                             Container(
                               height: 45,
                               padding: EdgeInsets.only(left: 10, right: 10),
-                              decoration: BoxDecoration(
-                                border: BoxBorder.all(
-                                  color: theam_dark_blue_color,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
+                              decoration: box_border.copyWith(border: Border.all(
+                                color: theam_dark_blue_color
+                              )),
                               child: PlatformTextField(
                                 //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
                                 // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
@@ -240,10 +222,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                                     'Phone', // Common hint text (can override per platform)
                                 // iOS Specific Customization
                                 cupertino: (context, platform) => CupertinoTextFieldData(
-                                  decoration: BoxDecoration(
-                                    color: Colors
-                                        .transparent, // No background color for iOS field
-                                  ),
+                                  decoration: text_decoration_clear,
                                   style:
                                       textStyleForTextField, // Text color on iOS
                                 ),
@@ -273,13 +252,9 @@ class _RegistrationViewState extends State<RegistrationView> {
                             Container(
                               height: 45,
                               padding: EdgeInsets.only(left: 10, right: 10),
-                              decoration: BoxDecoration(
-                                border: BoxBorder.all(
-                                  color: theam_dark_blue_color,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
+                              decoration: box_border.copyWith(border: Border.all(
+                                color: theam_dark_blue_color
+                              )),
                               child: PlatformTextField(
                                 //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
                                 // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
@@ -292,10 +267,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                                     'Email', // Common hint text (can override per platform)
                                 // iOS Specific Customization
                                 cupertino: (context, platform) => CupertinoTextFieldData(
-                                  decoration: BoxDecoration(
-                                    color: Colors
-                                        .transparent, // No background color for iOS field
-                                  ),
+                                  decoration: text_decoration_clear,
                                   style:
                                       textStyleForTextField, // Text color on iOS
                                 ),
@@ -325,13 +297,9 @@ class _RegistrationViewState extends State<RegistrationView> {
                             Container(
                               height: 45,
                               padding: EdgeInsets.only(left: 10, right: 10),
-                              decoration: BoxDecoration(
-                                border: BoxBorder.all(
-                                  color: theam_dark_blue_color,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
+                              decoration: box_border.copyWith(border: Border.all(
+                                color: theam_dark_blue_color
+                              )),
                               child: PlatformTextField(
                                 //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
                                 // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
@@ -344,10 +312,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                                     'Address', // Common hint text (can override per platform)
                                 // iOS Specific Customization
                                 cupertino: (context, platform) => CupertinoTextFieldData(
-                                  decoration: BoxDecoration(
-                                    color: Colors
-                                        .transparent, // No background color for iOS field
-                                  ),
+                                  decoration: text_decoration_clear,
                                   style:
                                       textStyleForTextField, // Text color on iOS
                                 ),
@@ -377,13 +342,9 @@ class _RegistrationViewState extends State<RegistrationView> {
                             Container(
                               height: 45,
                               padding: EdgeInsets.only(left: 10, right: 10),
-                              decoration: BoxDecoration(
-                                border: BoxBorder.all(
-                                  color: theam_dark_blue_color,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
+                              decoration: box_border.copyWith(border: Border.all(
+                                color: theam_dark_blue_color
+                              )),
                               child: PlatformTextField(
                                 //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
                                 // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
@@ -396,10 +357,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                                     'Zip Code', // Common hint text (can override per platform)
                                 // iOS Specific Customization
                                 cupertino: (context, platform) => CupertinoTextFieldData(
-                                  decoration: BoxDecoration(
-                                    color: Colors
-                                        .transparent, // No background color for iOS field
-                                  ),
+                                  decoration: text_decoration_clear,
                                   style:
                                       textStyleForTextField, // Text color on iOS
                                 ),
@@ -429,13 +387,9 @@ class _RegistrationViewState extends State<RegistrationView> {
                             Container(
                               height: 45,
                               padding: EdgeInsets.only(left: 10, right: 10),
-                              decoration: BoxDecoration(
-                                border: BoxBorder.all(
-                                  color: theam_dark_blue_color,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
+                              decoration: box_border.copyWith(border: Border.all(
+                                color: theam_dark_blue_color
+                              )),
                               child: PlatformTextField(
                                 //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
                                 // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
@@ -452,10 +406,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                                     'State', // Common hint text (can override per platform)
                                 // iOS Specific Customization
                                 cupertino: (context, platform) => CupertinoTextFieldData(
-                                  decoration: BoxDecoration(
-                                    color: Colors
-                                        .transparent, // No background color for iOS field
-                                  ),
+                                  decoration: text_decoration_clear,
                                   style:
                                       textStyleForTextField, // Text color on iOS
                                 ),
@@ -485,13 +436,9 @@ class _RegistrationViewState extends State<RegistrationView> {
                             Container(
                               height: 45,
                               padding: EdgeInsets.only(left: 10, right: 10),
-                              decoration: BoxDecoration(
-                                border: BoxBorder.all(
-                                  color: theam_dark_blue_color,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
+                              decoration: box_border.copyWith(border: Border.all(
+                                color: theam_dark_blue_color
+                              )),
                               child: PlatformTextField(
                                 //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
                                 // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
@@ -508,10 +455,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                                     'City', // Common hint text (can override per platform)
                                 // iOS Specific Customization
                                 cupertino: (context, platform) => CupertinoTextFieldData(
-                                  decoration: BoxDecoration(
-                                    color: Colors
-                                        .transparent, // No background color for iOS field
-                                  ),
+                                  decoration: text_decoration_clear,
                                   style:
                                       textStyleForTextField, // Text color on iOS
                                 ),
@@ -541,13 +485,9 @@ class _RegistrationViewState extends State<RegistrationView> {
                             Container(
                               height: 45,
                               padding: EdgeInsets.only(left: 10, right: 10),
-                              decoration: BoxDecoration(
-                                border: BoxBorder.all(
-                                  color: theam_dark_blue_color,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
+                              decoration: box_border.copyWith(border: Border.all(
+                                color: theam_dark_blue_color
+                              )),
                               child: PlatformTextField(
                                 //controller: addeditAddressViewModel.firstNameController, // (Optional: TextEditingController, currently commented)
                                 // onChanged: addeditAddressViewModel.setFirstName, // Called on text change
@@ -564,10 +504,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                                     'Country', // Common hint text (can override per platform)
                                 // iOS Specific Customization
                                 cupertino: (context, platform) => CupertinoTextFieldData(
-                                  decoration: BoxDecoration(
-                                    color: Colors
-                                        .transparent, // No background color for iOS field
-                                  ),
+                                  decoration: text_decoration_clear,
                                   style:
                                       textStyleForTextField, // Text color on iOS
                                 ),
@@ -596,13 +533,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                             Container(
                               height: 10,
                               clipBehavior: Clip.antiAlias,
-                              decoration: BoxDecoration(
-                                color: theam_dark_blue_color,
-                                borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(10),
-                                  topRight: Radius.circular(10),
-                                ),
-                              ),
+                              decoration: top_two_rounded.copyWith(color: theam_dark_blue_color),
                             ),                      
                           ],
                         ),
@@ -615,19 +546,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                                child: Container(
                                   width: double.infinity,
                                   height: 50,
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      colors: [
-                                        theam_sky_blue_color, // Start color (blue)
-                                        theam_dark_blue_color, // End color (light blue)
-                                      ],
-                                      begin: Alignment.topLeft,
-                                      end: Alignment.bottomRight,
-                                    ),
-                                    borderRadius: BorderRadius.circular(
-                                      10,
-                                    ), // Optional: Rounded corners
-                                  ),
+                                  decoration: gradient_button_decoration,
                                   child: TextButton(
                                     onPressed: () {},
                                     child: Text(

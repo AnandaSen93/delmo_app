@@ -47,5 +47,9 @@
 		<true/>
 		<key>UIStatusBarHidden</key>
 		<false/>
+
+		<key>GMSApiKey</key>
+		<string>AIzaSyDcNSunM6ae7MDFsc8uWM5G2PearKt_lx0</string>
+
 	</dict>
 </plist>
