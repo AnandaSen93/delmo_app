@@ -63,25 +63,37 @@ class _RegistrationViewState extends State<RegistrationView> {
                     children: [
                       // Profile image
                       Stack(
-                        children: [ Container(
-                          width: double.infinity,
-                          height: 250,
-                          color: background_color,
-                          padding: EdgeInsets.all(25),
-                          child: Center(
-                            child: Container(
-                              decoration: circleWithBorder,
-                              clipBehavior: Clip.hardEdge,
-                              child: AspectRatio(
-                                aspectRatio: 1,
-                                child: Image.asset(
-                                  "assets/images/default_image.png",
-                                  fit: BoxFit.fitHeight,
+                        children: [ 
+                          
+                         Container(
+                            width: double.infinity,
+                            color: background_color,
+                            child: Column(
+                              children: [
+                                SizedBox(height: 20),
+                                Container(
+                                  height: 120,
+                                  width: 120,                                
+                                  decoration: circleWithBorder.copyWith(
+                                    border: Border.all(color: theam_dark_blue_color),
+                                  ),
+                                  padding: EdgeInsets.all(2),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(60),
+                                    child: Image.asset(
+                                      "assets/images/default_image.png",
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                SizedBox(height: 20),
+                              ],
                             ),
                           ),
-                        ),
+
+
+
+
                         Positioned(
                           top: 50,
                           right: 90,

@@ -3,6 +3,8 @@ import 'package:delmo_app/helper_and_api/api_service.dart';
 import 'package:delmo_app/helper_and_api/loader.dart';
 import 'package:delmo_app/home/home_viewmodel.dart';
 import 'package:delmo_app/login/login_viewmodel.dart';
+import 'package:delmo_app/my_account/myaccount_viewmodel.dart';
+import 'package:delmo_app/my_request/myrequest_viewmodel.dart';
 import 'package:delmo_app/splash/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +15,10 @@ void main() {
     ChangeNotifierProvider(create: (context) => DrawerViewmodel()),
     ChangeNotifierProvider(create: (context) => HomeViewmodel()),
     ChangeNotifierProvider(create: (context) => LoginViewmodel()),
+    ChangeNotifierProvider(create: (context) => MyrequestViewmodel()),
+    ChangeNotifierProvider(create: (context) => MyaccountViewmodel()),
+
+    
 
     
 

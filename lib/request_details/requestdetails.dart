@@ -37,7 +37,7 @@ class _RequestDetailsViewState extends State<RequestDetailsView> {
                       ),
                       Spacer(),
                       Text(
-                        "Submit Request",
+                        "Request Details",
                         style: textStyleForHeading.copyWith(color: white_color),
                       ),
                       Spacer(),
@@ -60,6 +60,23 @@ class _RequestDetailsViewState extends State<RequestDetailsView> {
                   ),
                 ),
             //Header End
+
+
+            // Scrollview
+            Expanded(child: 
+            Container(
+              child: SingleChildScrollView(
+                child: Container(
+                  child: Column(
+                    children: [
+                      
+                    ],
+                  ),
+                ),
+
+              ),
+            ))
+            // Scrollview
           ],
         )
       ),

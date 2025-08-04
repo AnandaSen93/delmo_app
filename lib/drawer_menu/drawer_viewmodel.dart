@@ -6,9 +6,9 @@ import 'package:delmo_app/my_account/myaccount.dart';
 import 'package:delmo_app/my_order/myorder.dart';
 import 'package:delmo_app/my_request/myrequest.dart';
 import 'package:delmo_app/privacy_policy/privacy.dart';
+import 'package:delmo_app/rating_review/rating.dart';
 import 'package:delmo_app/terms_conditions/terms.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class DrawerViewmodel extends ChangeNotifier {
   
@@ -126,7 +126,7 @@ class DrawerViewmodel extends ChangeNotifier {
     final result = await Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => TermsView(),
+        builder: (context) => RatingView(),
       ),
     );
 

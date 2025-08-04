@@ -60,6 +60,45 @@ class _NotificationViewState extends State<NotificationView> {
                   ),
                 ),
             //Header End
+
+            // List
+            Expanded(child: Container(
+              color: background_color,
+              child: ListView.separated(
+                itemCount: 10,
+                separatorBuilder: (context, index){
+                  return SizedBox(height: 10);
+                },
+                itemBuilder: (context, index){
+                  return Container(
+                    color: white_color,
+                    padding: EdgeInsets.only(left: 10, right: 10, top: 10),
+                    child: Column(
+                      children: [
+                        Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet quis condimentum duis rhoncus risus cras commodo a. Aliquet praesent ut ut hendrerit sed ",
+                          style: textStyleForTextField,
+                        ),
+                        SizedBox(height: 10),
+                        Container(
+                          width: double.infinity,
+                          child: Text("23:25",
+                          textAlign: TextAlign.right,
+                          style: textStyleForTextField.copyWith(color: theam_sky_blue_color),),
+                        ),
+                        SizedBox(height: 10),
+                        Container(
+                          decoration: top_two_rounded.copyWith(color: theam_dark_blue_color),
+                          height: 8,
+                        )
+                      ],
+                    ),
+                  );
+
+                }, 
+                 
+                ),
+            )) 
+            // List
           ],
         )
       ),

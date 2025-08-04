@@ -794,7 +794,9 @@ class _HomeViewState extends State<HomeView> {
                               height: 50,
                               decoration: gradient_button_decoration,
                               child: TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  homeViewmodel.navigateToSubmitRequest(context);
+                                },
                                 child: Text(
                                   "NEXT → ",
                                   style: textStyleForButton,
