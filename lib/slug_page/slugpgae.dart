@@ -3,16 +3,16 @@ import 'package:delmo_app/helper_and_api/textstyle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
-class AboutUsView extends StatefulWidget {
-  const AboutUsView({super.key});
+class SlugView extends StatefulWidget {
+  const SlugView({super.key});
 
   @override
-  State<AboutUsView> createState() => _AboutUsViewState();
+  State<SlugView> createState() => _SlugViewState();
 }
 
-class _AboutUsViewState extends State<AboutUsView> {
+class _SlugViewState extends State<SlugView> {
   @override
-  Widget build(BuildContext context) {
+ Widget build(BuildContext context) {
     return PlatformScaffold(
       body: SafeArea(
         child:Column(
@@ -37,7 +37,7 @@ class _AboutUsViewState extends State<AboutUsView> {
                       ),
                       Spacer(),
                       Text(
-                        "About Us",
+                        "Terms & Conditions",
                         style: textStyleForHeading.copyWith(color: white_color),
                       ),
                       Spacer(),

@@ -1,7 +1,9 @@
 import 'package:delmo_app/helper_and_api/colors.dart';
 import 'package:delmo_app/helper_and_api/textstyle.dart';
+import 'package:delmo_app/my_order/myorder_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+import 'package:provider/provider.dart';
 
 class MyOrderView extends StatefulWidget {
   const MyOrderView({super.key});
@@ -13,6 +15,8 @@ class MyOrderView extends StatefulWidget {
 class _MyOrderViewState extends State<MyOrderView> {
   @override
   Widget build(BuildContext context) {
+    final myorderViewmodel = Provider.of<MyorderViewmodel>(context);
+
     return PlatformScaffold(
       body: SafeArea(
         child: Column(
@@ -105,7 +109,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                             itemBuilder: (context, index) {
                               return GestureDetector(
                                 onTap: () {
-                                  ;
+                                  myorderViewmodel.navigateToOrderDetails(context);
                                 },
                                 child: MyOrderCardView(),
                               );
@@ -120,7 +124,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                             itemBuilder: (context, index) {
                               return GestureDetector(
                                 onTap: () {
-                                  ;
+                                  myorderViewmodel.navigateToOrderDetails(context);
                                 },
                                 child: MyOrderCardView(),
                               );
@@ -135,7 +139,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                             itemBuilder: (context, index) {
                               return GestureDetector(
                                 onTap: () {
-                                  ;
+                                  myorderViewmodel.navigateToOrderDetails(context);
                                 },
                                 child: MyOrderCardView(),
                               );
