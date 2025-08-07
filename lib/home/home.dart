@@ -63,6 +63,10 @@ class _HomeViewState extends State<HomeView> {
       final _ = detail.result.geometry?.location.lat;
       final _ = detail.result.geometry?.location.lng;
 
+      print(detail.result.geometry?.location.lat);
+      print("object");
+      print(detail.result.geometry?.location.lng);
+
       setState(() {
         _controller.text = name;
       });
@@ -234,8 +238,10 @@ class _HomeViewState extends State<HomeView> {
                                     controller: _controller,
                                     readOnly: true,
                                     hintText:
-                                        'Address....', // Common hint text (can override per platform)
+                                        'Address....', 
+                                       keyboardType: TextInputType.emailAddress,
                                     // iOS Specific Customization
+
                                     cupertino: (context, platform) =>
                                         CupertinoTextFieldData(
                                           decoration: text_decoration_clear,

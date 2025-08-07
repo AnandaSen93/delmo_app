@@ -17,13 +17,13 @@ class GlobalLoader {
       barrierDismissible: false, // Prevent closing on tap
       builder: (context) {
         return Container(          
-          color: Colors.white.withOpacity(0.2),
+          color: Color.fromRGBO(1, 1, 1, 0.1),
           child: Center(
 
             child: Column(
                mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                  SpinKitCircle(color: grey_color, size: 50.0),
+                  SpinKitCircle(color: theam_dark_blue_color, size: 50.0),
                   Text("Please wait....",
                     style: textStyleForTextField,
                   )

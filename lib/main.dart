@@ -3,6 +3,7 @@ import 'package:delmo_app/helper_and_api/api_service.dart';
 import 'package:delmo_app/helper_and_api/loader.dart';
 import 'package:delmo_app/home/home_viewmodel.dart';
 import 'package:delmo_app/login/login_viewmodel.dart';
+import 'package:delmo_app/login/otp/otp_viewmodel.dart';
 import 'package:delmo_app/my_account/myaccount_viewmodel.dart';
 import 'package:delmo_app/my_order/myorder_viewmodel.dart';
 import 'package:delmo_app/my_request/myrequest_viewmodel.dart';
@@ -21,6 +22,9 @@ void main() {
     ChangeNotifierProvider(create: (context) => MyaccountViewmodel()),
     ChangeNotifierProvider(create: (context) => RequestdetailsViewmodel()),
     ChangeNotifierProvider(create: (context) => MyorderViewmodel()),
+    ChangeNotifierProvider(create: (context) => OtpViewmodel()),
+
+    
 
     
     

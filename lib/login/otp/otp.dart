@@ -1,8 +1,11 @@
 import 'package:delmo_app/helper_and_api/colors.dart';
 import 'package:delmo_app/helper_and_api/textstyle.dart';
+import 'package:delmo_app/login/login_viewmodel.dart';
+import 'package:delmo_app/login/otp/otp_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+import 'package:provider/provider.dart';
 
 class OtpView extends StatefulWidget {
   const OtpView({super.key});
@@ -13,6 +16,7 @@ class OtpView extends StatefulWidget {
 
 class _OtpViewState extends State<OtpView> {
   final FocusNode _focusNode = FocusNode();
+  
 
   void _toggleKeyboard() {
     if (_focusNode.hasFocus) {
@@ -24,6 +28,8 @@ class _OtpViewState extends State<OtpView> {
 
   @override
   Widget build(BuildContext context) {
+
+     final otpViewmodel = Provider.of<OtpViewmodel>(context);
     return PlatformScaffold(
       body: SafeArea(
         child: Column(
@@ -90,7 +96,7 @@ class _OtpViewState extends State<OtpView> {
                         padding: EdgeInsets.all(15),
                         width: double.infinity,
                         child: Text(
-                          "Please enter the 6 digit code to +91 89******68",
+                          "Please enter the 6 digit code to ${otpViewmodel.phone_code} ${otpViewmodel.phone_number}",
                           textAlign: TextAlign.center,
                           style: textStyleForSubHeading.copyWith(
                             color: Colors.black54,
