@@ -22,6 +22,18 @@ class OtpViewmodel extends ChangeNotifier {
     phone_code = code;
   }
 
+
+   String checkValidation() {
+   
+    String str = "";
+    if (otp_one.text.length != 1 || otp_two.text.length != 1 || otp_three.text.length != 1 || otp_four.text.length != 1 || otp_five.text.length != 1 || otp_six.text.length != 1) {
+      str = "Please enter OTP.";
+    } else {
+      str = "success";
+    }
+    return str;
+  }
+
   Future<LoginModel?> loginApiCall() async {
     try {
       final response = await ApiServices().postApiCall({
